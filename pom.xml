@@ -26,6 +26,20 @@
       <version>${karate.version}</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>
+        io.gatling.frontline
+      </groupId>
+      <artifactId>
+        frontline-probe
+      </artifactId>
+      <version>
+        1.4.6
+      </version>
+      <scope>
+        test
+      </scope>
+    </dependency>
   </dependencies>
 
   <build>
