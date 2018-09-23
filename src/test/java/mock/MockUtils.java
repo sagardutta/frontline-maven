@@ -13,11 +13,11 @@ import java.util.Map;
  * @author pthomas3
  */
 public class MockUtils {
-    
+
     public static void startServer() {
         File file = FileUtils.getFileRelativeTo(MockUtils.class, "mock.feature");
         FeatureServer server = FeatureServer.start(file, 0, false, null);
-        System.setProperty("mock.cats.url", "http://localhost:" + server.getPort() + "/cats");        
+        System.setProperty("mock.cats.url", "http://localhost:" + server.getPort() + "/cats");
     }
 
     public static Map<String, Object> myRpc(Map<String, Object> map, PerfContext context) {
@@ -34,5 +34,5 @@ public class MockUtils {
         context.capturePerfEvent("myRpc-" + sleepTime, startTime, endTime);
         return Collections.singletonMap("success", true);
     }
-    
+
 }

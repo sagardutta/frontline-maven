@@ -1,7 +1,7 @@
 Feature: cats crud
 
   Background:
-    * url karate.properties['mock.cats.url']
+    * url 'http://www.mocky.io/v2/5ba5a835310000d020d4dae1'
 
   Scenario: create, get and update cat
     Given request { name: 'Billie' }

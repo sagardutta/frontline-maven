@@ -7,7 +7,7 @@ import scala.concurrent.duration._
 
 class CatsKarateSimulation extends Simulation {
 
-  MockUtils.startServer()
+
 
   val protocol = karateProtocol(
     "/cats/{id}" -> Nil,
@@ -21,9 +21,6 @@ class CatsKarateSimulation extends Simulation {
   val custom = scenario("custom").exec(karateFeature("classpath:mock/custom-rpc.feature"))
 
   setUp(
-    create.inject(rampUsers(10) over (5 seconds)).protocols(protocol),
-    delete.inject(rampUsers(5) over (5 seconds)).protocols(protocol),
-    custom.inject(rampUsers(10) over (5 seconds)).protocols(protocol)
-  )
+    create.inject(rampUsers(10) over (5 seconds)).protocols(protocol))
 
 }
